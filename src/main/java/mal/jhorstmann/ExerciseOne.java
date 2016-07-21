@@ -1,3 +1,4 @@
+package mal.jhorstmann;
 
 public class ExerciseOne {
 
@@ -83,7 +84,7 @@ public class ExerciseOne {
      */
 
 
-    public static void main(String [] args){
+    public static void   main(String [] args){
         printInt(10);
     }
 }

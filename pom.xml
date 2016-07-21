@@ -22,7 +22,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.5.0</version>
                 <configuration>
-                    <mainClass>ExerciseOne</mainClass>
+                    <mainClass>mal.jhorstmann.ExerciseOne</mainClass>
                 </configuration>
             </plugin>
         </plugins>

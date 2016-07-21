@@ -1,11 +1,10 @@
+import mal.jhorstmann.ExerciseOne;
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.io.SyncFailedException;
 
 import static org.junit.Assert.*;
 
