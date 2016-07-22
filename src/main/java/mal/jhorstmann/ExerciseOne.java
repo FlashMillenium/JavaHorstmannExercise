@@ -1,5 +1,6 @@
 package mal.jhorstmann;
 
+
 public class ExerciseOne {
 
     /*
@@ -18,7 +19,14 @@ public class ExerciseOne {
        normalizes it to a value between 0 and 359 degrees. Try it first with the % operator,
        then with floorMod.
      */
-
+    public static int getAngle(final int i){
+        int angle;
+        final int fullAngle = 360;
+        angle = i < 0 ? fullAngle + i : i;
+        //angle = angle%fullAngle;
+        angle = Math.floorMod(angle,fullAngle);
+        return angle;
+    }
     /*
        Using only the conditional operator, write a program that reads three integers and
        print the largest. Repeat with Math.max.
