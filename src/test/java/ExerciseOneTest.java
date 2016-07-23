@@ -55,4 +55,12 @@ public class ExerciseOneTest {
         assertEquals(expectedValue,actualValue);
     }
 
+    @Test
+    public void maxInt() throws Exception {
+        final int intMax = 100, intmin1 = 50, intmin2 = 50;
+        final int expectedValue = 100, actualValue;
+        actualValue = ExerciseOne.maxInt(intmin1, intMax, intmin2);
+        assertEquals(expectedValue,actualValue);
+    }
+
 }

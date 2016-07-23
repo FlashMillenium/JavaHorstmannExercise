@@ -31,7 +31,12 @@ public class ExerciseOne {
        Using only the conditional operator, write a program that reads three integers and
        print the largest. Repeat with Math.max.
      */
-
+    public static int maxInt(int i1, int i2, int i3){
+        int maxi;
+         //maxi = i1 > i2 ? (i1 > i3 ? i1 : i3) : (i2 > i3 ? i2 : i3);
+        maxi=Math.max(i1,Math.max(i2,i3));
+        return maxi;
+    }
     /*
        Write a program that prints the smallest and largest positive double value.
        Hint: Look up Math.nextUp in the Java API.
