@@ -1,6 +1,9 @@
 package mal.jhorstmann;
 
 
+import java.math.BigInteger;
+import java.util.DoubleSummaryStatistics;
+
 public class ExerciseOne {
 
     /*
@@ -38,15 +41,15 @@ public class ExerciseOne {
         return maxi;
     }
     /*
-       Write a program that prints the smallest and largest positive double value.
-       Hint: Look up Math.nextUp in the Java API.
-     */
-
-    /*
        Write a program that computes the factorial n! = 1 x 2 x ... n, using
        BigInteger. Compute the factorial of 1000.
      */
-
+    public static BigInteger factorial(int count){
+        BigInteger result = new BigInteger("1");
+        for(int i = count; i>1; i--)
+           result = result.multiply(BigInteger.valueOf(i));
+        return result;
+    }
     /*
        Write a program that reads in two numbers between 0 and 65535,
        stores them in short variables, and computers their unsigned sum,
@@ -98,6 +101,6 @@ public class ExerciseOne {
 
 
     public static void   main(String [] args){
-        printInt(10);
+        factorial(25);
     }
 }

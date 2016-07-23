@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.math.BigInteger;
 
 import static org.junit.Assert.*;
 
@@ -23,13 +24,13 @@ public class ExerciseOneTest {
     }
 
     @Test
-    public void printInt() throws Exception {
+    public void testPrintInt() throws Exception {
         ExerciseOne.printInt(10);
         assertEquals("1010 12 a 0X1.999AP-4",outContent.toString());
     }
 
     @Test
-    public void getNegativeAngle() throws Exception {
+    public void testGetNegativeAngle() throws Exception {
         final int negativeAngle = -250;
         final int expectedValue = 110;
         int actualValue;
@@ -38,7 +39,7 @@ public class ExerciseOneTest {
     }
 
     @Test
-    public void getExcessAngle() throws Exception {
+    public void testGetExcessAngle() throws Exception {
         final int excessAngle = 1000;
         final int expectedValue = 280;
         int actualValue;
@@ -47,7 +48,7 @@ public class ExerciseOneTest {
     }
 
     @Test
-    public void getAngle() throws Exception {
+    public void testGetAngle() throws Exception {
         final int angle = 90;
         final int expectedValue = 90;
         int actualValue;
@@ -56,11 +57,19 @@ public class ExerciseOneTest {
     }
 
     @Test
-    public void maxInt() throws Exception {
+    public void testMaxInt() throws Exception {
         final int intMax = 100, intmin1 = 50, intmin2 = 50;
         final int expectedValue = 100, actualValue;
         actualValue = ExerciseOne.maxInt(intmin1, intMax, intmin2);
         assertEquals(expectedValue,actualValue);
     }
 
+    @Test
+    public void testFactorial() throws Exception {
+        final BigInteger expectedValue = new BigInteger("15511210043330985984000000");
+        final int count = 25;
+        final BigInteger actualValue;
+        actualValue = ExerciseOne.factorial(count);
+        assertEquals(expectedValue,actualValue);
+    }
 }
