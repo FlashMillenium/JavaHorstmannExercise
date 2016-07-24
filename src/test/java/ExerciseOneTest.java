@@ -72,4 +72,19 @@ public class ExerciseOneTest {
         actualValue = ExerciseOne.factorial(count);
         assertEquals(expectedValue,actualValue);
     }
+
+    @Test
+    public void testShortCalc(){
+        final short s1 = (short)40000, s2 = 300;
+        final short[] actualValue = ExerciseOne.shortCompute(s1, s2);
+        final short[] expectedValue = new short[5];
+        int i1 = 40000, i2 = 300;
+        expectedValue[0] = (short)(i1+i2);
+        expectedValue[1] = (short)(i1-i2);
+        expectedValue[2] = (short)(i1*i2);
+        expectedValue[3] = (short)(i1/i2);
+        expectedValue[4] = (short)(i1%i2);
+        assertArrayEquals(expectedValue,actualValue);
+
+    }
 }

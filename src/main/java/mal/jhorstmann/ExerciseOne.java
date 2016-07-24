@@ -55,7 +55,16 @@ public class ExerciseOne {
        stores them in short variables, and computers their unsigned sum,
        difference, product, quotient, and remainder, without converting them to int.
      */
+    public static short[] shortCompute(short one, short two){
+        short[] result = new short[5];
 
+        result[0] = (short)(Short.toUnsignedInt(one) + Short.toUnsignedInt(two));
+        result[1] = (short)(Short.toUnsignedInt(one) - Short.toUnsignedInt(two));
+        result[2] = (short)(Short.toUnsignedInt(one) * Short.toUnsignedInt(two));
+        result[3] = (short)(Short.toUnsignedInt(one) / Short.toUnsignedInt(two));
+        result[4] = (short)(Short.toUnsignedInt(one)%Short.toUnsignedInt(two));
+        return result;
+    }
     /*
        Write a program that reads a string and print all of its nonempty substring.
      */
@@ -101,6 +110,6 @@ public class ExerciseOne {
 
 
     public static void   main(String [] args){
-        factorial(25);
+
     }
 }
