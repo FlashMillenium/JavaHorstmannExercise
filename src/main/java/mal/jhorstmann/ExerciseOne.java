@@ -2,6 +2,8 @@ package mal.jhorstmann;
 
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.DoubleSummaryStatistics;
 import java.util.Random;
 import java.util.regex.Matcher;
@@ -104,6 +106,19 @@ public class ExerciseOne {
        ArrayList<ArrayList<Integer>>.
      */
 
+    public static ArrayList<ArrayList<Integer>> trianglePascale(int n){
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+        for (int i=0; i<n; i++){
+            ArrayList<Integer> row = new ArrayList<Integer>();
+            for(int j=0;j<=i;j++){
+                if(j==0 || j==i) row.add(1);
+                else row.add(result.get(i-1).get(j-1)+result.get(i-1).get(j));
+            }
+            result.add(i,row);
+        }
+        return result;
+    }
+
     /*
        Improve the average method so that it is called with at least one parameter.
      */
@@ -111,8 +126,8 @@ public class ExerciseOne {
 
     public static void   main(String [] args){
 
-        String s = randString(42);
-        System.out.println(s.length());
-        System.out.println(s);
+        ArrayList<ArrayList<Integer>> res = trianglePascale(10);
+        System.out.println(Arrays.deepToString(res.toArray()));
+
     }
 }

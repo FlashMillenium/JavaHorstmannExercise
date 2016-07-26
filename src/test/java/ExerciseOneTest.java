@@ -6,6 +6,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.math.BigInteger;
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
@@ -93,5 +94,30 @@ public class ExerciseOneTest {
         final String Value = ExerciseOne.randString(slength);
         assertEquals(slength,Value.length());
         assertFalse(Value,Value.matches("\\W*"));
+    }
+
+    @Test
+    public void testPascalTriangle() {
+        final int height = 11;
+        final int[][] expectedValue = {
+                {1},
+                {1, 1},
+                {1, 2, 1},
+                {1, 3, 3, 1},
+                {1, 4, 6, 4, 1},
+                {1, 5, 10, 10, 5, 1},
+                {1, 6, 15, 20, 15, 6, 1},
+                {1, 7, 21, 35, 35, 21, 7, 1},
+                {1, 8, 28, 56, 70, 56, 28, 8, 1},
+                {1, 9, 36, 84, 126, 126, 84, 36, 9, 1},
+                {1, 10, 45, 120, 210, 252, 210, 120, 45, 10, 1}};
+
+        ArrayList<ArrayList<Integer>> arrayLists = ExerciseOne.trianglePascale(height);
+        Integer[][] actualValue = new Integer[arrayLists.size()][];
+        for(int i=0; i<arrayLists.size();i++){
+            ArrayList<Integer> row = arrayLists.get(i);
+            actualValue[i]=row.toArray(new Integer[row.size()]);
+        }
+        assertArrayEquals(expectedValue,actualValue);
     }
 }
