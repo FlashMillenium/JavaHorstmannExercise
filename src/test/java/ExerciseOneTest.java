@@ -85,6 +85,13 @@ public class ExerciseOneTest {
         expectedValue[3] = (short)(i1/i2);
         expectedValue[4] = (short)(i1%i2);
         assertArrayEquals(expectedValue,actualValue);
+    }
 
+    @Test
+    public void testRandomString(){
+        final int slength = 42;
+        final String Value = ExerciseOne.randString(slength);
+        assertEquals(slength,Value.length());
+        assertFalse(Value,Value.matches("\\W*"));
     }
 }

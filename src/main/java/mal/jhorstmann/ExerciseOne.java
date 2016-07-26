@@ -3,6 +3,10 @@ package mal.jhorstmann;
 
 import java.math.BigInteger;
 import java.util.DoubleSummaryStatistics;
+import java.util.Random;
+import java.util.regex.Matcher;
+
+import static java.lang.Math.abs;
 
 public class ExerciseOne {
 
@@ -66,25 +70,21 @@ public class ExerciseOne {
         return result;
     }
     /*
-       Write a program that reads a string and print all of its nonempty substring.
-     */
-
-    /*
-       Write a program that produces a random string of letters amd digits by generating
+       Write a program that produces a random string of letters and digits by generating
        a random long value and printing it in base 36.
      */
-
-    /*
-       Write a program that reads a line of text and prints all characters
-       that are not ASCII, together with their Unicode values.
-     */
-
-    /*
-       Write a program that prints a lottery combination, picking six distinct
-       numbers between 1 and 49. To pick six distinct number, start with an array list
-       filled with 1...49. To pick six distinct numbers, start with an array list filled with 1...49.
-       Pick a random index and remove the element. Repeat six times. Print the result in sorted order.
-     */
+     public static String randString(int length){
+         StringBuilder result = new StringBuilder(length);
+         Random rGenerator = new Random(System.currentTimeMillis());
+         for(int i = 0; i<length; i++){
+             int c = (int)abs(rGenerator.nextLong()%36);
+             //System.out.print(c + " ");
+             if(c<26) c+=97;
+             else     c+=48-26;
+             result.append((char)c);
+         }
+        return result.toString();
+     }
 
     /*
        Write a program that reads a two-dimensional array of integers and determines whether it is
@@ -111,5 +111,8 @@ public class ExerciseOne {
 
     public static void   main(String [] args){
 
+        String s = randString(42);
+        System.out.println(s.length());
+        System.out.println(s);
     }
 }
