@@ -120,4 +120,13 @@ public class ExerciseOneTest {
         }
         assertArrayEquals(expectedValue,actualValue);
     }
+
+    @Test
+    public void testAverage(){
+        final double firstValue = 2.0, secondValue = 5.0, thirdValue = 2.0;
+        final double delta = 1e-15, expectedValue = 3.0;
+        assertEquals(firstValue, ExerciseOne.average(firstValue),delta );
+        double actualValue = ExerciseOne.average(firstValue,secondValue,thirdValue);
+        assertEquals(expectedValue,actualValue,delta);
+    }
 }

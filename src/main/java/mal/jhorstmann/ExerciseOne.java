@@ -1,7 +1,9 @@
 package mal.jhorstmann;
 
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.DoubleSummaryStatistics;
@@ -89,19 +91,6 @@ public class ExerciseOne {
      }
 
     /*
-       Write a program that reads a two-dimensional array of integers and determines whether it is
-       a magic square (that is, whether the sum of all rows, all columns, and the diagonals is the same).
-       Accept lines of input that you break up into individual integers, and stop when the user enters
-       a blank line. For example, with the input:
-       16  3  2 13
-        3 10 11  8
-        9  6  7 12
-        4 15 14  1
-        (blank line)
-        you program should respond affirmatively.
-     */
-
-    /*
        Write a program that stores Pascal's triangle up to a given n in an
        ArrayList<ArrayList<Integer>>.
      */
@@ -122,12 +111,17 @@ public class ExerciseOne {
     /*
        Improve the average method so that it is called with at least one parameter.
      */
+    public static double average(double firstValue, double... values){
+        double sum = firstValue;
+        for (double v: values){ sum +=v; }
+        System.out.println(values.length);
+        return values.length == 0 ? sum : BigDecimal.valueOf(sum).divide(BigDecimal.valueOf(values.length+1),10, RoundingMode.HALF_UP).doubleValue();
 
 
-    public static void   main(String [] args){
+    }
 
-        ArrayList<ArrayList<Integer>> res = trianglePascale(10);
-        System.out.println(Arrays.deepToString(res.toArray()));
+    public static void  main(String [] args){
+
 
     }
 }
